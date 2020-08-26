@@ -1,0 +1,55 @@
+.Contents
+  .Dropdown
+    - if user_signed_in?
+      %ul.Doropdown__lists
+        %li 
+          = current_user.nickname 
+          さん
+        %li 
+          = link_to user_path(current_user.id) do 
+            My page
+        %li
+          =link_to destroy_user_session_path, method: :delete do 
+            Log out
+    - else 
+      %ul.Dropdown__lists 
+        %li 
+          = link_to new_user_registration_path do 
+            Sign in 
+        %li 
+          = link_to user_session_path do 
+            Log in
+
+
+  .Container
+    .Top-container 
+      .Top-container__messages
+        %h2.Top-container__messages--message
+          旅の過程にこそ価値がある。
+        %p.Top-container__messages--name
+          スティーブ・ジョブズ
+    .Main-container
+      %h1.Main-container__title 
+        Posts List
+      
+      .Main-container__posts
+        .Category 
+          = link_to "#", class: "Category__gourmet " do 
+            Gourmet
+          = link_to "#", class: "Category__spot " do 
+            Spot 
+        .Post-new 
+          .Post-new__images
+            - @tweets.each do |tweet|
+              .Post-new__images__image
+                = link_to tweet_path(tweet.id), method: :get do 
+                  %img{ src: tweet.image, alt: "写真１", class: "Post-new__images__image__photo"}
+               
+          
+
+          
+        
+          
+            
+
+
