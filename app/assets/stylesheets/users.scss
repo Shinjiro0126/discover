@@ -1,3 +1,240 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Top{
+  &__user{
+    margin: 30px;
+    display: flex;
+    &__image{
+      width: 180px;
+      height: 180px;
+      border-radius: 100px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+    &__profile{
+      margin-left: 40px;
+      &__name{
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Sawarabi Mincho', sans-serif;
+      }
+      &__name span{
+        font-size: 15px;
+        color: rgb(201, 199, 199);
+        margin-left: 25px;
+      }
+      &__prof{
+        font-size: 13px;
+        color: black;
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 5px 10px;
+      }
+      &__text{
+        font-size: 20px;
+        margin-top: 5px;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}
+
+.Main{
+  padding-top: 50px;
+  &__title{
+    font-size: 50px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    padding-left: 30px;
+  }
+  .Category{
+    display: flex;
+    margin-top: 40px;
+    font-size: 30px;
+    padding-left: 10px;
+    .Category-left{
+      display: flex;
+      .Category__gourmet{
+        border: 1px solid black;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: black;
+      }
+      .Category__spot{
+        border: 1px solid black;
+        padding: 10px 50px;
+        text-decoration: none;
+        color: black;
+      }
+      .Category__like{
+        border: 1px solid black;
+        padding: 10px 50px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  .Post-user{
+    width: 100%;
+    &__images{
+      width: 100%;
+      height: auto;
+      border: red;
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      &__image{
+        width: calc(100% / 3);
+        object-fit: cover;
+        margin-bottom: 15px;
+        overflow: hidden;
+        &__photo{
+          width: 95%;
+          height: 100%;
+          object-fit: cover;
+          
+        }
+      }
+    }
+  }
+}
+.Account{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+  .Dropdown{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgb(216, 218, 214);
+    color: white;
+    width: 300px;
+    text-align: center;
+    opacity: 0.8;
+  }
+  .Dropdown li{
+    border: 1px solid white;
+    font-size: 20px;
+    padding: 5px 0;
+  }
+  .Dropdown a{
+    color: black;
+    text-decoration: none;
+  }
+  .Account-background{
+    &__image{
+      width: 100%;
+    }    
+  }
+  .Account-user{
+    position: relative;
+    bottom: 23%;
+    text-align: center;
+    &__image{
+      width: 20%;
+      border-radius: 50%;
+      border: 5px solid white;
+      overflow: hidden;
+      object-fit: cover;
+      opacity:0.9;
+    }
+    &__name{
+      font-size: 40px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    &__count{
+      font-size: 20px;
+      margin-top: 5px;
+      
+    }
+  }
+  .Account-edit{
+    position: relative;
+    bottom: 15%;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .title-block{
+      &__first{
+        width: calc(100%/3);
+        border-bottom: 1px solid rgb(122, 120, 120);
+        border-radius: 5px;
+      }
+      &__second{
+        font-size: 30px;
+        color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+        width: calc(100%/3);
+        border-top: 1px solid rgb(122, 120, 120);
+        border-left: 1px solid rgb(122, 120, 120);
+        border-right: 1px solid rgb(122, 120, 120);
+        border-radius: 5px;
+      }
+      &__third{
+        width: calc(100%/3);
+        border-bottom: 1px solid rgb(122, 120, 120);
+        border-radius: 5px;
+      }
+    }
+  }
+  .Account-form{
+    position: relative;
+    bottom: 15%;
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    .Form{
+      width:40%;
+      
+      .Form__image{
+        border: 1px solid black;
+        padding: 1px;
+        border-radius: 3px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        &__img{
+          margin: unset;
+        }
+      }
+      .Form__submit{
+        height: 50px;
+        opacity: 0.5;
+        background-color: rgb(197, 197, 197);
+      }
+      .Form__submit:hover{
+        cursor: pointer;
+        opacity: 1
+      }
+    }
+    
+
+  .Form input{
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    padding-left: 5px;
+  }
+  .Form textarea{
+    width: 100%;
+    height: 150px;
+    padding-left: 10px;
+    border: 1px solid black;
+    padding: 1px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+  }
+  }
+  .Account-form label{
+    font-size: 20px;
+    color: gray;
+    margin-bottom: 10px;
+  }
+}
