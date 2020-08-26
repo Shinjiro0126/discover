@@ -6,6 +6,35 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
+
   %body
+    .Header
+      .Header-left 
+        =link_to root_path, class: "Header-left__title" do 
+          Discover 
+      .Header-right
+        = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+          = form.text_field :keyword, placeholder: "キーワードを入力", class: "search-input"
+          %button{type: "submit", class: "search-btn"}
+            %i.fas.fa-search 
+            
+
+        - if user_signed_in?
+          
+          .Header-right__search-btn 
+            =icon('fas', 'search')
+          .Header-right__new-btn
+            =link_to new_tweet_path, class: "Header-right__new-btn__link" do
+              =icon('fas', 'plus')
+          .Header-right__user-btn 
+            =icon('fas', 'user-circle')
+        - else 
+          .Header-right__search-btn 
+            =icon('fas', 'search')
+          .Header-right__user-btn
+            =icon('fas', 'user-circle')
+    .Flash-message
+      = flash[:notice]
     = yield
+
