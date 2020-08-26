@@ -1,0 +1,77 @@
+.Session-form{
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-image: url("alberta-2297204_1920.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Session-block{
+    border: 1px solid black;
+    width: 400px;
+    text-align: center;
+    background-color: white;
+    opacity: 0.8;
+    &__submit{
+      margin-top: 20px;
+    }
+  }
+  .Session-block h2{
+    background-color: rgb(255, 166, 0);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .Session-block label{
+    color: black;
+    font-size: 20px;
+  }
+  .Session-block input{
+    width: 90%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  .Session-block a{
+    text-decoration: none;
+    color: rgb(255, 166, 0);
+  }
+}
+
+.Registrations-form{
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-image: url("louvre-102840_1280.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Registrations-block{
+    border: 1px solid black;
+    width: 400px;
+    text-align: center;
+    background-color: white;
+    opacity: 0.9;
+    &__submit{
+      margin-top: 20px;
+    }
+  }
+  .Registrations-block h2{
+    background-color: rgb(255, 166, 0);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .Registrations-block label{
+    color: black;
+    font-size: 20px;
+  }
+  .Registrations-block input{
+    width: 90%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  .Registrations-block a{
+    text-decoration: none;
+    color: rgb(255, 166, 0);
+  }
+}
