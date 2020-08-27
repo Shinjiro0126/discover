@@ -1,0 +1,20 @@
+.Contents
+  .Dropdown
+    %ul.Doropdown__lists
+      %li 
+        = current_user.nickname 
+        さん
+      %li 
+        = link_to user_path(current_user.id) do 
+          My page
+      %li
+        =link_to destroy_user_session_path, method: :delete do 
+          Log out
+  .Container
+    .Create 
+      .Create__messages 
+        %h1.Create__messages--message 
+          投稿が完了しました  
+        
+        =link_to root_path, class: "Create__messages--send" do 
+          投稿一覧へ戻る
