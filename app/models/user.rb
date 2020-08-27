@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true 
 
   has_many :tweets 
+  has_many :comments
 
   mount_uploader :user_image, ImageUploader
 end
