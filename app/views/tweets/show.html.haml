@@ -47,3 +47,26 @@
         .Show-post__text__box 
           = @tweet.text
 
+    .Comments
+      - if current_user
+        = form_with model: [@tweet, @comment], local: true do |f|
+          = f.text_area :text, placeholder: "コメントを追加...", rows: "3"
+          = f.submit "投稿する"
+      - else 
+        .need-login
+          *** コメントの投稿には新規登録/ログインが必要です ***
+      .lists
+        - if @comments
+          - @comments.each do |comment|
+            .list 
+              .list__name
+                = link_to user_path(comment.user_id), data: {"turbolinks"=>false} do
+                  = "#{comment.user.nickname} :"
+              .list__text
+                = comment.text
+
+
+          
+          
+
+
