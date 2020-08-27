@@ -6,18 +6,18 @@
           = current_user.nickname 
           さん
         %li 
-          = link_to user_path(current_user.id) do 
+          = link_to user_path(current_user.id), data: {"turbolinks"=>false} do 
             My page
         %li
-          =link_to destroy_user_session_path, method: :delete do 
+          =link_to destroy_user_session_path, data: {"turbolinks"=>false}, method: :delete do 
             Log out
     - else 
       %ul.Dropdown__lists 
         %li 
-          = link_to new_user_registration_path do 
+          = link_to new_user_registration_path, data: {"turbolinks"=>false} do 
             Sign in 
         %li 
-          = link_to user_session_path do 
+          = link_to user_session_path, data: {"turbolinks"=>false} do 
             Log in
   .Container 
     .Top
@@ -33,7 +33,7 @@
             Number of posts: 
             = @count
           - if user_signed_in? && current_user.id.to_s == params[:id]
-            = link_to  edit_user_path, class: "Top__user__profile__prof" do 
+            = link_to  edit_user_path, data: {"turbolinks"=>false}, class: "Top__user__profile__prof" do 
               ProfileEdit
               = icon('fas', 'cog')
           .Top__user__profile__text 
@@ -55,7 +55,7 @@
         .Post-user__images
           - @tweets.each do |tweet|
             .Post-user__images__image
-              = link_to tweet_path(tweet.id), method: :get do 
+              = link_to tweet_path(tweet.id), data: {"turbolinks"=>false}, method: :get do 
                 %img{ src: tweet.image, alt: "写真１", class: "Post-user__images__image__photo"}
 
 

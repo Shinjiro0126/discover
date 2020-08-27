@@ -6,18 +6,18 @@
           = current_user.nickname 
           さん
         %li 
-          = link_to user_path(current_user.id) do 
+          = link_to user_path(current_user.id), data: {"turbolinks"=>false} do 
             My page
         %li
-          =link_to destroy_user_session_path, method: :delete do 
+          =link_to destroy_user_session_path, data: {"turbolinks"=>false}, method: :delete do 
             Log out
     - else 
       %ul.Dropdown__lists 
         %li 
-          = link_to new_user_registration_path do 
+          = link_to new_user_registration_path, data: {"turbolinks"=>false} do 
             Sign in 
         %li 
-          = link_to user_session_path do 
+          = link_to user_session_path, data: {"turbolinks"=>false} do 
             Log in
 
 
@@ -42,7 +42,7 @@
           .Post-new__images
             - @tweets.each do |tweet|
               .Post-new__images__image
-                = link_to tweet_path(tweet.id), method: :get do 
+                = link_to tweet_path(tweet.id), data: {"turbolinks"=>false}, method: :get do 
                   %img{ src: tweet.image, alt: "写真１", class: "Post-new__images__image__photo"}
                
           
