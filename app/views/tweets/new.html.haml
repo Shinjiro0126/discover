@@ -1,0 +1,27 @@
+.Contents
+  .Dropdown
+    %ul.Doropdown__lists
+      %li 
+        = current_user.nickname 
+        さん
+      %li 
+        = link_to user_path(current_user.id) do 
+          My page
+      %li
+        =link_to destroy_user_session_path, method: :delete do 
+          Log out
+  .Container
+    .New-post 
+      = form_with(model: @tweet, local: true, class: "New-post__form") do |form|
+        %h3.New-post__form--title
+          新規投稿
+        = render "layouts/error_messages", model: form.object
+        = form.file_field :image, placeholder: "Image", class: "New-post__form--image" 
+        = form.text_area :text, placeholder: "text", class: "New-post__form--text"
+        = form.submit "SEND", class: "New-post__form--send"
+
+      %p.New-post__share
+        自分が見つけた光景を
+        %br 
+        みんなにシェアしましょう。
+       
