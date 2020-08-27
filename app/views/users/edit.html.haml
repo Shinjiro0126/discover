@@ -1,0 +1,59 @@
+.Account 
+  .Dropdown
+    %ul.Doropdown__lists
+      %li 
+        = current_user.nickname 
+        さん
+      %li 
+        = link_to user_path(current_user.id) do 
+          My page
+      %li
+        =link_to destroy_user_session_path, method: :delete do 
+          Log out
+    
+  .Account-background 
+    = image_tag "avenue-3464777_1920.jpg", alt: "写真", class: "Account-background__image"
+  .Account-user
+    - if current_user.user_image?
+      = image_tag current_user.user_image.url, alt: "写真１", class: "Account-user__image"
+    - else
+      = image_tag "user-icon.png", alt: "ユーザー", class: "Account-user__image"
+    .Account-user__name 
+      = current_user.nickname
+    .Account-user__count 
+      Number of posts:
+      = current_user.tweets.count
+
+  .Account-edit 
+    .title-block__first
+    .title-block__second
+      AccountEdit
+    .title-block__third
+
+  .Account-form
+    = form_with(model: @user, multipart: true, local: true, class: "Form") do |f|
+      .Form_error 
+        = render "layouts/error_messages", model: @user
+      .Form__field
+        = f.label :nickname 
+        %br/
+        = f.text_field :nickname, autofocus: true 
+      .Form__field
+        = f.label :email  
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .Form__field       
+        = f.label :Image 
+        %br/
+        .Form__image
+          = f.file_field :user_image, placeholder: "Image", class: "Form__image__img"
+      .Form__field
+        =f.label :profile
+        %br/
+        = f.text_area :profile, placeholder: "your profile", class: "Form__profile"
+
+      = f.submit "SEND", class: "Form__submit"
+
+
+    
+      
