@@ -1,0 +1,49 @@
+.Contents 
+  .Dropdown
+    - if user_signed_in?
+      %ul.Doropdown__lists
+        %li 
+          = current_user.nickname 
+          さん
+        %li 
+          = link_to user_path(current_user.id) do 
+            My page
+        %li
+          =link_to destroy_user_session_path, method: :delete do 
+            Log out
+    - else 
+      %ul.Dropdown__lists 
+        %li 
+          = link_to new_user_registration_path do 
+            Sign in 
+        %li 
+          = link_to user_session_path do 
+            Log in
+  .Container
+    .Show-post
+      = link_to user_path(@tweet.user_id), class: "Show-post__users" do
+        - if @tweet.user.user_image.url.nil?
+          = image_tag "user-icon.png", alt: "ユーザー", class: "Show-post__users--icon"
+        - else
+          = image_tag  @tweet.user.user_image.url, alt: "写真１", class: "Show-post__users--icon"
+        %p.Show-post__users--name 
+          = @tweet.user.nickname
+
+      %img{ src: @tweet.image, alt: "写真１", class: "Show-post__image"} 
+
+      .Show-post__contents 
+        .Show-post__contents__like-btn 
+          いいね！ 2
+        .Show-post__contents__list 
+          - if user_signed_in? && current_user.id == @tweet.user_id
+            = link_to edit_tweet_path(@tweet.id), class: "Show-post__contents__list__edit" do 
+              Edit
+
+            = link_to tweet_path(@tweet.id), method: :delete, class: "Show-post__contents__list__destroy" do 
+              Delete
+              
+
+      .Show-post__text 
+        .Show-post__text__box 
+          = @tweet.text
+
