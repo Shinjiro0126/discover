@@ -66,3 +66,5 @@ gem 'devise'
 gem 'rails-i18n'
 
 gem 'jquery-rails'
+
+gem 'react-rails', '~> 1.7.0'
