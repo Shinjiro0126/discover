@@ -33,7 +33,8 @@
 
       .Show-post__contents 
         .Show-post__contents__like-btn 
-          いいね！ 2
+          .Like#like{ id: @tweet.id}
+            = render "likes/like"
         .Show-post__contents__list 
           - if user_signed_in? && current_user.id == @tweet.user_id
             = link_to edit_tweet_path(@tweet.id), data: {"turbolinks"=>false}, class: "Show-post__contents__list__edit" do 
