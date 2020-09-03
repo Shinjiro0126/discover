@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     end 
   end 
   resources :users, only: [:show, :edit, :update]
+  resources :likes, only: [:create, :destroy]
   
 end
