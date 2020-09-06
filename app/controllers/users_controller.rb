@@ -24,6 +24,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def likes
+    @user = User.find_by(id: params[:id]) 
+    @likes = Like.where(user_id: @user.id)
+    # @tweets = @user.tweets.order("created_at DESC") 
+    @nickname = @user.nickname 
+    @profile = @user.profile 
+    @count = @user.tweets.count
+    @image = @user.user_image
+  end
+
   private 
 
   def user_params 

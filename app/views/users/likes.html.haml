@@ -53,9 +53,7 @@
             Like
       .Post-user
         .Post-user__images
-          - @tweets.each do |tweet|
+          - @user.like_tweets.each do |tweet|
             .Post-user__images__image
               = link_to tweet_path(tweet.id), data: {"turbolinks"=>false}, method: :get do 
                 %img{ src: tweet.image, alt: "写真１", class: "Post-user__images__image__photo"}
-
-
