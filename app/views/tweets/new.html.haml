@@ -17,6 +17,7 @@
           新規投稿
         = render "layouts/error_messages", model: form.object
         = form.file_field :image, placeholder: "Image", class: "New-post__form--image" 
+        = form.collection_select :category_id, Category.all, :id, :name
         = form.text_area :text, placeholder: "text", class: "New-post__form--text"
         = form.submit "SEND", class: "New-post__form--send"
 
