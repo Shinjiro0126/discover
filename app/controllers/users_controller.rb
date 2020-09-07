@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :ensure_correct_user, only: [:edit, :update, :likes]
 
   def show
     @user = User.find(params[:id]) 
@@ -25,9 +25,8 @@ class UsersController < ApplicationController
   end
 
   def likes
-    @user = User.find_by(id: params[:id]) 
-    @likes = Like.where(user_id: @user.id)
-    # @tweets = @user.tweets.order("created_at DESC") 
+    @user = User.find_by(id: current_user.id) 
+    @likes = Like.where(user_id: @user.id) 
     @nickname = @user.nickname 
     @profile = @user.profile 
     @count = @user.tweets.count

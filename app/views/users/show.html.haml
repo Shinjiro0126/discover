@@ -49,8 +49,9 @@
             Gourmet
           = link_to "#", class: "Category__spot " do 
             Spot 
-          = link_to "/users/#{@user.id}/likes", class: "Category__like", data: {"turbolinks"=>false} do 
-            Like
+          - if user_signed_in? && current_user.id.to_s == params[:id]
+            = link_to "/users/#{@user.id}/likes", class: "Category__like", data: {"turbolinks"=>false} do 
+              Like
       .Post-user
         .Post-user__images
           - @tweets.each do |tweet|
