@@ -70,3 +70,5 @@ gem 'jquery-rails'
 gem 'react-rails', '~> 1.7.0'
 
 gem 'active_hash'
+
+gem 'fog-aws'
