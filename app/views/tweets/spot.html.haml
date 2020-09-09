@@ -34,9 +34,9 @@
       
       .Main-container__posts
         .Category 
-          = link_to "#", class: "Category__gourmet " do 
+          = link_to gourmet_tweets_path, class: "Category__gourmet ", data: {"turbolinks"=>false} do  
             Gourmet
-          = link_to "#", class: "Category__spot " do 
+          = link_to spot_tweets_path, class: "Category__spot ", data: {"turbolinks"=>false} do
             Spot 
         .Post-new 
           .Post-new__images
