@@ -33,6 +33,24 @@ class UsersController < ApplicationController
     @image = @user.user_image
   end
 
+  def gourmet
+    @user = User.find(params[:id]) 
+    @tweets = @user.tweets.where(category_id: 1).order("created_at DESC") 
+    @nickname = @user.nickname 
+    @profile = @user.profile 
+    @count = @user.tweets.count
+    @image = @user.user_image
+  end
+
+  def spot
+    @user = User.find(params[:id]) 
+    @tweets = @user.tweets.where(category_id: 2).order("created_at DESC") 
+    @nickname = @user.nickname 
+    @profile = @user.profile 
+    @count = @user.tweets.count
+    @image = @user.user_image
+  end
+
   private 
 
   def user_params 

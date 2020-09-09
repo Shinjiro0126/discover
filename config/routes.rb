@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] 
   
   get "/users/:id/likes" => "users#likes"
+  get "/users/:id/spot" => "users#spot"
+  get "/users/:id/gourmet" => "users#gourmet"
 end
