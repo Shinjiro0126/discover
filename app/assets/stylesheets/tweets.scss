@@ -33,6 +33,7 @@
     background-color: white;
     overflow: scroll;
     .Top-container{
+      min-width: 1115px;
       background-image: url("castle-1149756_1920.jpg");
       background-size: cover;
       height: 100%;
@@ -55,6 +56,7 @@
     .Main-container{
       padding-top: 50px;
       &__title{
+        min-width: 310px;
         font-size: 50px;
         font-family: 'Sawarabi Mincho', sans-serif;
         padding-left: 30px;
@@ -106,12 +108,14 @@
 }
 
 .New-post{
+  min-width: 685px;
   height: 100%;
   width: 100%;
   background-image: url("airport-3511342_1920.jpg");
   background-size: cover;
   position: relative;
   &__form{
+    min-width: 390px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -163,6 +167,7 @@
     }
   }
   &__share{
+    min-width: 390px;
     color: white;
     font-size: 30px;
     position: absolute;
@@ -203,6 +208,7 @@
 }
 
 .Show-post{
+  min-width: 480px;
   &__users{
     display: flex;
     align-items: center;
@@ -319,12 +325,14 @@
 }
 
 .Edit-post{
+  min-width: 650px;
   height: 100%;
   width: 100%;
   background-image: url("mountain-984083_1920.jpg");
   background-size: cover;
   position: relative;
   &__form{
+    min-width: 390px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -377,6 +385,7 @@
     }
   }
   &__share{
+    min-width: 270px;
     color: white;
     font-size: 30px;
     position: absolute;
