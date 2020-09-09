@@ -46,6 +46,14 @@ class TweetsController < ApplicationController
     @tweets = Tweet.search(params[:keyword])
   end 
 
+  def gourmet
+    @tweets = Tweet.includes(:user).where(category_id: 1).order("created_at DESC")
+  end
+
+  def spot
+    @tweets = Tweet.includes(:user).where(category_id: 2).order("created_at DESC")
+  end
+
 
   
 
