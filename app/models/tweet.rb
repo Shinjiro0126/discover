@@ -9,6 +9,8 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :likes, dependent: :destroy
+  has_many :tweet_hashtags, dependent: :destroy
+  has_many :hashtags, through: :tweet_hashtags
 
   mount_uploader :image, ImageUploader
 
