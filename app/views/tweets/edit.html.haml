@@ -1,15 +1,5 @@
 .Contents
-  .Dropdown
-    %ul.Doropdown__lists
-      %li 
-        = current_user.nickname 
-        さん
-      %li 
-        = link_to user_path(current_user.id), data: {"turbolinks"=>false} do 
-          My page
-      %li
-        =link_to destroy_user_session_path, data: {"turbolinks"=>false}, method: :delete do 
-          Log out
+  = render "dropdown"
   .Container 
     .Edit-post 
       = form_with(model: @tweet, local: true, class: "Edit-post__form") do |form|

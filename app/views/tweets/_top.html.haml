@@ -1,0 +1,32 @@
+.Container
+  .Top-container 
+    .Top-container__messages
+      %h2.Top-container__messages--message
+        旅の過程にこそ価値がある。
+      %p.Top-container__messages--name
+        スティーブ・ジョブズ
+  .Main-container
+    %h1.Main-container__title 
+      Posts List
+    
+    .Main-container__posts
+      .Category 
+        = link_to gourmet_tweets_path, class: "Category__gourmet ", data: {"turbolinks"=>false} do 
+          Gourmet
+        = link_to spot_tweets_path, class: "Category__spot ", data: {"turbolinks"=>false} do 
+          Spot 
+      .Post-new 
+        .Post-new__images
+          - @tweets.each do |tweet|
+            .Post-new__images__image
+              = link_to tweet_path(tweet.id), data: {"turbolinks"=>false}, method: :get do 
+                %img{ src: tweet.image.url, alt: "写真１", class: "Post-new__images__image__photo"}
+               
+          
+
+          
+        
+          
+            
+
+
